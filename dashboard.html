@@ -1,1 +1,70 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shelter Sudan | Dashboard</title><link rel="stylesheet" href="css/style.css"></head><body><div class="app"><aside class="sidebar"><div class="side-brand"><div class="brand-mark small">SS</div><div><b>Shelter Sudan</b><small>Management Platform</small></div></div><nav><a class="active" href="dashboard.html">⌂ <span>Dashboard</span></a><a href="shelters.html">⌂ <span>Shelters</span></a><a href="families.html">♧ <span>Displaced Families</span></a><a href="assistance.html">✚ <span>Humanitarian Aid</span></a><a href="reports.html">▤ <span>Reports</span></a></nav><button class="logout" onclick="logout()">↪ Logout</button></aside><main class="main"><header class="topbar"><div><span class="eyebrow">OVERVIEW</span><h1>Good morning, Admin 👋</h1><p class="muted">Here’s what is happening across your shelter network.</p></div><div class="top-actions"><span class="status-dot">System online</span></div></header><section class="cards"><div class="stat"><div class="icon blue">⌂</div><div><span>Total Shelters</span><strong id="statShelters">0</strong></div></div><div class="stat"><div class="icon orange">♧</div><div><span>Registered Families</span><strong id="statFamilies">0</strong></div></div><div class="stat"><div class="icon green">◈</div><div><span>Available Capacity</span><strong id="statCapacity">0</strong></div></div><div class="stat"><div class="icon red">✚</div><div><span>Aid Records</span><strong id="statAid">0</strong></div></div></section><section class="grid-two"><div class="panel"><div class="panel-head"><div><h3>Occupancy overview</h3><p class="muted">Current shelter capacity</p></div><a href="reports.html">View report →</a></div><div id="occupancyList" class="occupancy"></div></div><div class="panel"><div class="panel-head"><div><h3>Quick actions</h3><p class="muted">Common management tasks</p></div></div><div class="quick"><a href="shelters.html" class="quick-card"><span>🏕️</span><b>Register shelter</b><small>Add a new location</small></a><a href="families.html" class="quick-card"><span>👨‍👩‍👧</span><b>Register family</b><small>Add displaced family</small></a><a href="assistance.html" class="quick-card"><span>🤝</span><b>Record assistance</b><small>Log aid delivery</small></a><a href="reports.html" class="quick-card"><span>📊</span><b>Open reports</b><small>Review key figures</small></a></div></div></section><section class="panel"><div class="panel-head"><div><h3>Recent assistance</h3><p class="muted">Latest recorded humanitarian support</p></div><a href="assistance.html">See all →</a></div><div class="table-wrap"><table><thead><tr><th>Beneficiary</th><th>Type</th><th>Quantity</th><th>Date</th></tr></thead><tbody id="recentAid"></tbody></table></div></section></main></div><script src="js/script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shelter Sudan | Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="side-brand">
+      <div class="brand-mark small">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 28 L16 14" stroke="#5C3A21" stroke-width="2" stroke-linecap="round"/>
+          <path d="M16 14 C10 12 8 8 8 4 C11 6 14 8 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M16 14 C22 12 24 8 24 4 C21 6 18 8 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M8 24 Q12 22 16 24 T24 24" stroke="#2E7D5B" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div><b>Shelter Sudan</b><small>Management Platform</small></div>
+    </div>
+    <nav>
+      <a class="active" href="dashboard.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a href="shelters.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Shelters</span>
+      </a>
+      <a href="families.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><circle cx="17" cy="9" r="3"/><path d="M21 21v-1a3 3 0 00-3-3"/></svg>
+        <span>Displaced Families</span>
+      </a>
+      <a href="assistance.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+        <span>Humanitarian Aid</span>
+      </a>
+      <a href="reports.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+        <span>Reports</span>
+      </a>
+    </nav>
+    <button class="logout" onclick="logout()">↪ Logout</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">OVERVIEW</span>
+        <h1>Good morning, Admin 👋</h1>
+        <p class="muted">Here's what is happening across your shelter network.</p>
+      </div>
+      <div class="top-actions"><span class="status-dot">System online</span></div>
+    </header>
+
+    <section class="cards">
+      <div class="stat"><div class="icon blue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg>
+      </div><div><span>Total Shelters</span><strong id="statShelters">0</strong></div></div>
+
+      <div class="stat"><div class="icon orange">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+      </div><div><span>Registered Families</span><strong id="statFamilies">0</strong></div></div>
+
+      <div class="stat"><div class="icon green">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      </div><div><span>Available Capacity</span><strong id="statCapacity">0
