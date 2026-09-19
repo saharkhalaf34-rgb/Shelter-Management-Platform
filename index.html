@@ -1,1 +1,75 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shelter Sudan | Login</title><link rel="stylesheet" href="css/style.css"></head><body class="login-page"><div class="login-shell"><div class="login-art"><div class="brand-mark">SS</div><div><span class="eyebrow">SUDAN • HUMANITARIAN RESPONSE</span><h1>Shelter Sudan</h1><p>A digital platform for coordinating shelters, displaced families, essential needs and humanitarian assistance.</p></div><div class="sudan-pattern"></div></div><div class="login-card"><div class="mini-logo">SS</div><h2>Welcome back</h2><p class="muted">Sign in to manage your shelter operations.</p><form id="loginForm"><label>Email<input id="email" type="email" value="admin@shelter.com" required></label><label>Password<input id="password" type="password" value="123456" required></label><button class="primary-btn" type="submit">Sign in <span>→</span></button><div id="loginError" class="error"></div></form><p class="demo-note">Demo account • admin@shelter.com / 123456</p></div></div><script src="js/script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shelter Sudan | Login</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+<div class="login-shell">
+
+  <div class="login-art">
+    <!-- Sudan map SVG (decorative) -->
+    <svg class="sudan-map" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 20 L140 35 L155 70 L150 110 L135 145 L110 175 L85 180 L60 165 L45 135 L40 95 L55 55 L75 30 Z" 
+            stroke="#D4A017" stroke-width="2" fill="none"/>
+      <circle cx="100" cy="100" r="4" fill="#D4A017"/>
+      <circle cx="70" cy="80" r="2" fill="#D4A017"/>
+      <circle cx="130" cy="90" r="2" fill="#D4A017"/>
+      <circle cx="100" cy="140" r="2" fill="#D4A017"/>
+      <circle cx="85" cy="55" r="2" fill="#D4A017"/>
+    </svg>
+
+    <div class="brand-mark">
+      <!-- Palm + Nile logo -->
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 28 L16 14" stroke="#5C3A21" stroke-width="2" stroke-linecap="round"/>
+        <path d="M16 14 C10 12 8 8 8 4 C11 6 14 8 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M16 14 C22 12 24 8 24 4 C21 6 18 8 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M16 12 C13 9 12 6 13 3 C14.5 6 15.5 9 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M16 12 C19 9 20 6 19 3 C17.5 6 16.5 9 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M8 24 Q12 22 16 24 T24 24" stroke="#2E7D5B" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M6 27 Q11 25 16 27 T26 27" stroke="#2E7D5B" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <span class="eyebrow">SUDAN • HUMANITARIAN RESPONSE</span>
+    <h1>Shelter Sudan</h1>
+    <p>A digital platform for coordinating shelters, displaced families, essential needs and humanitarian assistance across Sudan.</p>
+  </div>
+
+  <div class="login-card">
+    <div class="mini-logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 28 L16 14" stroke="#5C3A21" stroke-width="2" stroke-linecap="round"/>
+        <path d="M16 14 C10 12 8 8 8 4 C11 6 14 8 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M16 14 C22 12 24 8 24 4 C21 6 18 8 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M16 12 C13 9 12 6 13 3 C14.5 6 15.5 9 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M16 12 C19 9 20 6 19 3 C17.5 6 16.5 9 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M8 24 Q12 22 16 24 T24 24" stroke="#2E7D5B" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M6 27 Q11 25 16 27 T26 27" stroke="#2E7D5B" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <h2>Welcome back</h2>
+    <p class="muted">Sign in to manage your shelter operations.</p>
+
+    <form id="loginForm">
+      <label>Email
+        <input id="email" type="email" value="admin@shelter.com" required>
+      </label>
+      <label>Password
+        <input id="password" type="password" value="123456" required>
+      </label>
+      <button class="primary-btn" type="submit">Sign in <span>→</span></button>
+      <div id="loginError" class="error"></div>
+    </form>
+
+    <p class="demo-note">Demo account • admin@shelter.com / 123456</p>
+  </div>
+
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
