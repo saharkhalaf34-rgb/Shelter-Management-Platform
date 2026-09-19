@@ -1,1 +1,96 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shelter Sudan | Shelters</title><link rel="stylesheet" href="css/style.css"></head><body><div class="app"><aside class="sidebar"><div class="side-brand"><div class="brand-mark small">SS</div><div><b>Shelter Sudan</b><small>Management Platform</small></div></div><nav><a href="dashboard.html">⌂ <span>Dashboard</span></a><a class="active" href="shelters.html">⌂ <span>Shelters</span></a><a href="families.html">♧ <span>Displaced Families</span></a><a href="assistance.html">✚ <span>Humanitarian Aid</span></a><a href="reports.html">▤ <span>Reports</span></a></nav><button class="logout" onclick="logout()">↪ Logout</button></aside><main class="main"><header class="topbar"><div><span class="eyebrow">SHELTER MANAGEMENT</span><h1>Shelters</h1><p class="muted">Register and monitor displacement shelters.</p></div><button class="primary-btn" onclick="openModal('shelterModal')">+ Register shelter</button></header><section class="toolbar"><input id="shelterSearch" oninput="renderShelters()" placeholder="Search shelter or location…"><button class="ghost-btn" onclick="seedDemo()">Load demo data</button></section><section class="panel"><div class="table-wrap"><table><thead><tr><th>Shelter</th><th>Location</th><th>Capacity</th><th>Occupied</th><th>Status</th><th></th></tr></thead><tbody id="shelterTable"></tbody></table></div></section></main></div><div class="modal" id="shelterModal"><div class="modal-card"><button class="close" onclick="closeModal('shelterModal')">×</button><h2>Register shelter</h2><form onsubmit="addShelter(event)"><label>Shelter name<input id="sName" required></label><label>Location<input id="sLocation" required></label><div class="form-row"><label>Capacity<input id="sCapacity" type="number" min="1" required></label><label>Occupied<input id="sOccupied" type="number" min="0" value="0" required></label></div><button class="primary-btn" type="submit">Save shelter</button></form></div></div><script src="js/script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shelter Sudan | Shelters</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="side-brand">
+      <div class="brand-mark small">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 28 L16 14" stroke="#5C3A21" stroke-width="2" stroke-linecap="round"/>
+          <path d="M16 14 C10 12 8 8 8 4 C11 6 14 8 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M16 14 C22 12 24 8 24 4 C21 6 18 8 16 12" stroke="#5C3A21" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M8 24 Q12 22 16 24 T24 24" stroke="#2E7D5B" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div><b>Shelter Sudan</b><small>Management Platform</small></div>
+    </div>
+    <nav>
+      <a href="dashboard.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a class="active" href="shelters.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Shelters</span>
+      </a>
+      <a href="families.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><circle cx="17" cy="9" r="3"/><path d="M21 21v-1a3 3 0 00-3-3"/></svg>
+        <span>Displaced Families</span>
+      </a>
+      <a href="assistance.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+        <span>Humanitarian Aid</span>
+      </a>
+      <a href="reports.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+        <span>Reports</span>
+      </a>
+    </nav>
+    <button class="logout" onclick="logout()">↪ Logout</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">SHELTER MANAGEMENT</span>
+        <h1>Shelters</h1>
+        <p class="muted">Register and monitor displacement shelters.</p>
+      </div>
+      <button class="primary-btn" onclick="openModal('shelterModal')">+ Register shelter</button>
+    </header>
+
+    <section class="toolbar">
+      <input id="shelterSearch" oninput="renderShelters()" placeholder="Search shelter or location…">
+      <button class="ghost-btn" onclick="seedDemo()">Load demo data</button>
+    </section>
+
+    <section class="panel">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Shelter</th><th>Location</th><th>Capacity</th><th>Occupied</th><th>Status</th><th></th></tr>
+          </thead>
+          <tbody id="shelterTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+</div>
+
+<div class="modal" id="shelterModal">
+  <div class="modal-card">
+    <button class="close" onclick="closeModal('shelterModal')">×</button>
+    <h2>Register shelter</h2>
+    <form onsubmit="addShelter(event)">
+      <label>Shelter name<input id="sName" required></label>
+      <label>Location<input id="sLocation" required></label>
+      <div class="form-row">
+        <label>Capacity<input id="sCapacity" type="number" min="1" required></label>
+        <label>Occupied<input id="sOccupied" type="number" min="0" value="0" required></label>
+      </div>
+      <button class="primary-btn" type="submit">Save shelter</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
